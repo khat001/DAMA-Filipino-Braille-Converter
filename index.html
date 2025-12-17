@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,6 +30,7 @@
         }
     </script>
 </head>
+
 <body class="bg-primary-100 min-h-screen">
     <!-- Header -->
     <header id="header" class="bg-primary-700 text-white p-4 shadow-lg transition-all duration-300">
@@ -37,14 +39,15 @@
                 <i data-feather="menu" class="w-6 h-6"></i>
             </button>
             <div class="flex items-center">
-                <img src="dama-logo-removebg-preview.png" alt="DAMA Logo" class="h-24">
+                <img src="img/dama-logo-removebg-preview.png" alt="DAMA Logo" class="h-24">
             </div>
             <div class="w-10"></div>
         </div>
     </header>
-    
+
     <!-- Sidebar -->
-    <aside id="sidebar" class="fixed top-0 left-0 h-full w-80 bg-white shadow-2xl transform -translate-x-full transition-transform duration-300 z-50">
+    <aside id="sidebar"
+        class="fixed top-0 left-0 h-full w-80 bg-white shadow-2xl transform -translate-x-full transition-transform duration-300 z-50">
         <div class="p-6">
             <div class="flex items-center justify-between mb-8">
                 <h2 class="text-xl font-semibold text-gray-800">Menu</h2>
@@ -53,79 +56,91 @@
                 </button>
             </div>
             <nav class="space-y-2">
-                <a href="index.html" class="flex items-center p-3 rounded-lg bg-primary-100 text-primary-700 font-medium">
+                <a href="index.html"
+                    class="flex items-center p-3 rounded-lg bg-primary-100 text-primary-700 font-medium">
                     <i data-feather="home" class="w-5 h-5 mr-3"></i>
                     <span>Homepage</span>
                 </a>
-                <a href="history.html" class="flex items-center p-3 rounded-lg hover:bg-primary-100 transition-colors text-gray-700">
+                <a href="history.html"
+                    class="flex items-center p-3 rounded-lg hover:bg-primary-100 transition-colors text-gray-700">
                     <i data-feather="clock" class="w-5 h-5 mr-3"></i>
                     <span>History Records</span>
                 </a>
-                <a href="how-it-works.html" class="flex items-center p-3 rounded-lg hover:bg-primary-100 transition-colors text-gray-700">
+                <a href="how-it-works.html"
+                    class="flex items-center p-3 rounded-lg hover:bg-primary-100 transition-colors text-gray-700">
                     <i data-feather="cpu" class="w-5 h-5 mr-3"></i>
                     <span>How This Model Works</span>
                 </a>
-                <a href="about.html" class="flex items-center p-3 rounded-lg hover:bg-primary-100 transition-colors text-gray-700">
+                <a href="about.html"
+                    class="flex items-center p-3 rounded-lg hover:bg-primary-100 transition-colors text-gray-700">
                     <i data-feather="info" class="w-5 h-5 mr-3"></i>
                     <span>About</span>
                 </a>
             </nav>
         </div>
     </aside>
-    
+
     <!-- Sidebar Overlay -->
     <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
-    
+
     <div class="min-h-screen">
         <!-- Main Content Area -->
         <main id="main-content" class="p-4">
             <!-- Homepage Content -->
             <div id="homepage-content" class="page-content">
                 <!-- Combined Banner and Welcome Section -->
-                <div class="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 rounded-3xl shadow-xl mb-6 border border-gray-200 overflow-hidden">
+                <div
+                    class="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 rounded-3xl shadow-xl mb-6 border border-gray-200 overflow-hidden">
                     <div class="flex items-center min-h-32 gap-4">
                         <!-- Banner -->
                         <div class="flex-shrink-0">
-                            <img src="banner-dama-removebg-preview.png" alt="DAMA Banner" class="h-full w-auto object-left drop-shadow-2xl">
+                            <img src="img/banner-dama-removebg-preview.png" alt="DAMA Banner"
+                                class="h-full w-auto object-left drop-shadow-2xl">
                         </div>
-                        
+
                         <!-- Welcome Message -->
                         <div class="text-gray-800 flex items-center px-8 py-6 bg-white/30 backdrop-blur-sm flex-1">
                             <div class="w-full">
                                 <h1 class="text-3xl font-bold mb-4 text-gray-800 leading-tight">Welcome to DAMA! 👋</h1>
-                                
-                                <p class="text-base mb-6 text-gray-700 leading-relaxed">Transform English or Filipino Braille images into readable text with our cutting-edge AI technology. Fast, accurate, and accessible for everyone.</p>
-                                
+
+                                <p class="text-base mb-6 text-gray-700 leading-relaxed">Transform English or Filipino
+                                    Braille images into readable text with our cutting-edge AI technology. Fast,
+                                    accurate, and accessible for everyone.</p>
+
                                 <div class="grid grid-cols-2 gap-4 mb-6">
                                     <div class="flex items-center">
-                                        <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-full p-2 mr-3 shadow">
+                                        <div
+                                            class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-full p-2 mr-3 shadow">
                                             <i data-feather="eye" class="w-4 h-4 text-white"></i>
                                         </div>
                                         <p class="text-sm font-medium text-gray-700">Accessibility</p>
                                     </div>
-                                    
+
                                     <div class="flex items-center">
-                                        <div class="bg-gradient-to-r from-secondary-500 to-secondary-600 rounded-full p-2 mr-3 shadow">
+                                        <div
+                                            class="bg-gradient-to-r from-secondary-500 to-secondary-600 rounded-full p-2 mr-3 shadow">
                                             <i data-feather="zap" class="w-4 h-4 text-white"></i>
                                         </div>
                                         <p class="text-sm font-medium text-gray-700">Lightning Fast</p>
                                     </div>
-                                    
+
                                     <div class="flex items-center">
-                                        <div class="bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-full p-2 mr-3 shadow">
+                                        <div
+                                            class="bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-full p-2 mr-3 shadow">
                                             <i data-feather="cpu" class="w-4 h-4 text-white"></i>
                                         </div>
                                         <p class="text-sm font-medium text-gray-700">AI Powered</p>
                                     </div>
-                                    
+
                                     <div class="flex items-center">
-                                        <div class="bg-gradient-to-r from-green-500 to-green-600 rounded-full p-2 mr-3 shadow">
+                                        <div
+                                            class="bg-gradient-to-r from-green-500 to-green-600 rounded-full p-2 mr-3 shadow">
                                             <i data-feather="shield" class="w-4 h-4 text-white"></i>
                                         </div>
                                         <p class="text-sm font-medium text-gray-700">Secure</p>
                                     </div>
                                 </div>
-                                
+
                                 <div class="bg-primary-700 text-white rounded-lg p-4 shadow">
                                     <p class="text-sm font-medium">✨ Upload your braille image below to get started</p>
                                 </div>
@@ -133,231 +148,260 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <!-- Image Upload Section -->
-                <div class="bg-white rounded-xl shadow-md p-6">
-                    <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
-                        <i data-feather="upload" class="mr-2"></i> Upload Braille Image
-                    </h2>
-                    <div class="flex justify-between items-center mb-4">
-                        <div class="flex gap-4">
-                            <label class="flex items-center cursor-pointer bg-white px-4 py-2 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-200">
-                                <input type="radio" name="language" id="english-radio" value="english" checked class="mr-2 accent-primary-500">
-                                <span class="text-sm font-medium text-gray-700">English</span>
-                            </label>
-                            <label class="flex items-center cursor-pointer bg-white px-4 py-2 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-200">
-                                <input type="radio" name="language" id="filipino-radio" value="filipino" class="mr-2 accent-primary-500">
-                                <span class="text-sm font-medium text-gray-700">Filipino</span>
-                            </label>
-                        </div>
-                        <div id="language-status" class="text-sm text-green-600 hidden"></div>
-                    </div>
-                    <div class="border-2 border-dashed border-primary-500 rounded-lg bg-gray-50 p-8 text-center cursor-pointer hover:bg-primary-50 transition-colors min-h-[400px] flex flex-col justify-center" id="drop-area">
-                        <input type="file" id="file-input" accept="image/*" class="hidden">
-                        <i data-feather="image" class="w-16 h-16 mx-auto text-primary-500 mb-4"></i>
-                        <p class="text-gray-600 mb-3 text-lg">Drag & drop your braille image here</p>
-                        <p class="text-sm text-gray-500 mb-6">or</p>
-                        <button class="bg-primary-500 hover:bg-primary-700 text-white font-medium py-3 px-6 rounded-lg transition-colors text-base" id="select-btn">
-                            Browse Files
-                        </button>
-                    </div>
-                </div>
 
-                <!-- Image Preview Section -->
-                <div class="bg-white rounded-xl shadow-md p-6">
-                    <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
-                        <i data-feather="eye" class="mr-2"></i> Image Preview
-                    </h2>
-                    <div class="h-[52px] mb-4"></div>
-                    <div class="border-2 border-dashed border-primary-500 rounded-lg bg-gray-50 p-8 text-center hover:bg-primary-50 transition-colors h-[400px] flex flex-col" id="preview-display">
-                        <div class="flex-1 flex items-center justify-center overflow-hidden">
-                            <div class="text-center" id="preview-placeholder">
-                                <i data-feather="image" class="w-16 h-16 mx-auto text-gray-400 mb-2"></i>
-                                <p class="text-gray-500 italic">Upload an image to see preview</p>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <!-- Image Upload Section -->
+                    <div class="bg-white rounded-xl shadow-md p-6">
+                        <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                            <i data-feather="upload" class="mr-2"></i> Upload Braille Image
+                        </h2>
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="flex gap-4">
+                                <label
+                                    class="flex items-center cursor-pointer bg-white px-4 py-2 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-200">
+                                    <input type="radio" name="language" id="english-radio" value="english" checked
+                                        class="mr-2 accent-primary-500">
+                                    <span class="text-sm font-medium text-gray-700">English</span>
+                                </label>
+                                <label
+                                    class="flex items-center cursor-pointer bg-white px-4 py-2 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-200">
+                                    <input type="radio" name="language" id="filipino-radio" value="filipino"
+                                        class="mr-2 accent-primary-500">
+                                    <span class="text-sm font-medium text-gray-700">Filipino</span>
+                                </label>
                             </div>
-                            <img id="preview-image" class="max-h-full max-w-full object-contain rounded-lg shadow hidden" alt="Preview">
+                            <div id="language-status" class="text-sm text-green-600 hidden"></div>
                         </div>
-                        <div class="flex justify-center mt-4">
-                            <button id="convert-btn" class="bg-secondary-500 hover:bg-secondary-700 text-white font-medium py-3 px-6 rounded-lg transition-colors flex items-center justify-center text-base">
-                                <i data-feather="refresh-cw" class="mr-2 animate-spin hidden" id="convert-spinner"></i>
-                                Convert to Text
+                        <div class="border-2 border-dashed border-primary-500 rounded-lg bg-gray-50 p-8 text-center cursor-pointer hover:bg-primary-50 transition-colors min-h-[400px] flex flex-col justify-center"
+                            id="drop-area">
+                            <input type="file" id="file-input" accept="image/*" class="hidden">
+                            <i data-feather="image" class="w-16 h-16 mx-auto text-primary-500 mb-4"></i>
+                            <p class="text-gray-600 mb-3 text-lg">Drag & drop your braille image here</p>
+                            <p class="text-sm text-gray-500 mb-6">or</p>
+                            <button
+                                class="bg-primary-500 hover:bg-primary-700 text-white font-medium py-3 px-6 rounded-lg transition-colors text-base"
+                                id="select-btn">
+                                Browse Files
                             </button>
                         </div>
                     </div>
-                </div>
-            </div>
-            
-            <!-- Converted Text Section -->
-            <div class="mt-6 bg-white rounded-xl shadow-md p-6">
-                <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
-                    <i data-feather="file-text" class="mr-2"></i> Converted Text
-                </h2>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                    <div class="border border-gray-200 rounded-lg p-4 bg-gray-50">
-                        <h3 class="text-sm font-semibold text-gray-700 mb-2">Detection Preview</h3>
-                        <div class="h-[500px] flex items-center justify-center bg-white rounded border border-gray-200" id="detection-preview">
-                            <p class="text-gray-400 italic text-sm">Predicted text by the model will appear here</p>
-                        </div>
-                    </div>
-                    <div class="border border-gray-200 rounded-lg p-4 bg-gray-50">
-                        <h3 class="text-sm font-semibold text-gray-700 mb-2">Translated Text</h3>
-                        <div class="h-[500px] overflow-auto bg-white rounded border border-gray-200 p-3" id="output-text">
-                            <p class="text-gray-500 italic">Your converted braille text will appear here...</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-4 flex justify-center gap-2">
-                    <button id="copy-btn" class="bg-primary-500 hover:bg-primary-700 text-white font-medium py-3 px-4 rounded-lg transition-colors flex items-center justify-center text-base flex-1">
-                        <i data-feather="copy" class="mr-2 w-4 h-4"></i> Copy
-                    </button>
-                    <button id="save-records-btn" class="bg-blue-500 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition-colors flex items-center justify-center text-base flex-1">
-                        <i data-feather="save" class="mr-2 w-4 h-4"></i> Save
-                    </button>
-                    <button id="download-btn" class="bg-secondary-500 hover:bg-secondary-700 text-white font-medium py-3 px-4 rounded-lg transition-colors flex items-center justify-center text-base flex-1">
-                        <i data-feather="download" class="mr-2 w-4 h-4"></i> Download
-                    </button>
-                </div>
-            </div>
 
-            <div class="mt-4 bg-white rounded-xl shadow-md p-4">
-                <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
-                    <i data-feather="info" class="mr-2"></i> How It Works
-                </h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div class="p-4 rounded-lg bg-primary-50">
-                        <div class="w-10 h-10 bg-primary-500 rounded-full flex items-center justify-center text-white mb-3">
-                            <i data-feather="upload"></i>
-                        </div>
-                        <h3 class="font-medium text-gray-800 mb-2">Upload Image</h3>
-                        <p class="text-gray-600 text-sm">Upload a clear image of braille text from your device.</p>
-                    </div>
-                    <div class="p-4 rounded-lg bg-primary-50">
-                        <div class="w-10 h-10 bg-primary-500 rounded-full flex items-center justify-center text-white mb-3">
-                            <i data-feather="cpu"></i>
-                        </div>
-                        <h3 class="font-medium text-gray-800 mb-2">AI Processing</h3>
-                        <p class="text-gray-600 text-sm">Our system analyzes the braille dots to decode the text.</p>
-                    </div>
-                    <div class="p-4 rounded-lg bg-primary-50">
-                        <div class="w-10 h-10 bg-primary-500 rounded-full flex items-center justify-center text-white mb-3">
-                            <i data-feather="file-text"></i>
-                        </div>
-                        <h3 class="font-medium text-gray-800 mb-2">Get Results</h3>
-                        <p class="text-gray-600 text-sm">View, copy or download the converted text instantly.</p>
-                    </div>
-                </div>
-
-
-            </div>
-
-            
-            <!-- History Records Page -->
-            <div id="history-content" class="page-content">
-                <p>HI</p>
-                <div class="bg-white rounded-xl shadow-md p-6">
-                    <!-- Records List -->
-                    <div id="records-list">
-                        <h2 class="text-2xl font-semibold text-gray-800 mb-6">History Records</h2>
-                        <div class="mb-6">
-                            <input type="text" id="search-records" placeholder="Search records..." class="w-full p-3 border border-gray-300 rounded-lg">
-                        </div>
-                        
-                        <div class="space-y-4">
-                            <div class="record-item bg-primary-50 rounded-lg p-4 cursor-pointer hover:bg-primary-100" data-record-id="1">
-                                <h3 class="font-medium text-gray-800">Sample Record 1</h3>
-                                <p class="text-sm text-gray-600">Hello World - Dec 15, 2024</p>
+                    <!-- Image Preview Section -->
+                    <div class="bg-white rounded-xl shadow-md p-6">
+                        <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                            <i data-feather="eye" class="mr-2"></i> Image Preview
+                        </h2>
+                        <div class="h-[52px] mb-4"></div>
+                        <div class="border-2 border-dashed border-primary-500 rounded-lg bg-gray-50 p-8 text-center hover:bg-primary-50 transition-colors h-[400px] flex flex-col"
+                            id="preview-display">
+                            <div class="flex-1 flex items-center justify-center overflow-hidden">
+                                <div class="text-center" id="preview-placeholder">
+                                    <i data-feather="image" class="w-16 h-16 mx-auto text-gray-400 mb-2"></i>
+                                    <p class="text-gray-500 italic">Upload an image to see preview</p>
+                                </div>
+                                <img id="preview-image"
+                                    class="max-h-full max-w-full object-contain rounded-lg shadow hidden" alt="Preview">
                             </div>
-                            <div class="record-item bg-primary-50 rounded-lg p-4 cursor-pointer hover:bg-primary-100" data-record-id="2">
-                                <h3 class="font-medium text-gray-800">Sample Record 2</h3>
-                                <p class="text-sm text-gray-600">Welcome to DAMA - Dec 15, 2024</p>
+                            <div class="flex justify-center mt-4">
+                                <button id="convert-btn"
+                                    class="bg-secondary-500 hover:bg-secondary-700 text-white font-medium py-3 px-6 rounded-lg transition-colors flex items-center justify-center text-base">
+                                    <i data-feather="refresh-cw" class="mr-2 animate-spin hidden"
+                                        id="convert-spinner"></i>
+                                    Convert to Text
+                                </button>
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Record Detail -->
-                    <div id="record-detail" class="hidden">
-                        <button id="back-to-records" class="mb-4 text-primary-700 hover:text-primary-900 flex items-center">
-                            <i data-feather="arrow-left" class="mr-2"></i> Back to Records
+                </div>
+
+                <!-- Converted Text Section -->
+                <div class="mt-6 bg-white rounded-xl shadow-md p-6">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                        <i data-feather="file-text" class="mr-2"></i> Converted Text
+                    </h2>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                        <div class="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                            <h3 class="text-sm font-semibold text-gray-700 mb-2">Detection Preview</h3>
+                            <div class="h-[500px] flex items-center justify-center bg-white rounded border border-gray-200"
+                                id="detection-preview">
+                                <p class="text-gray-400 italic text-sm">Predicted text by the model will appear here</p>
+                            </div>
+                        </div>
+                        <div class="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                            <h3 class="text-sm font-semibold text-gray-700 mb-2">Translated Text</h3>
+                            <div class="h-[500px] overflow-auto bg-white rounded border border-gray-200 p-3"
+                                id="output-text">
+                                <p class="text-gray-500 italic">Your converted braille text will appear here...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 flex justify-center gap-2">
+                        <button id="copy-btn"
+                            class="bg-primary-500 hover:bg-primary-700 text-white font-medium py-3 px-4 rounded-lg transition-colors flex items-center justify-center text-base flex-1">
+                            <i data-feather="copy" class="mr-2 w-4 h-4"></i> Copy
                         </button>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <h3 class="text-lg font-semibold mb-3">Original Image</h3>
-                                <img id="detail-image" class="w-full h-48 object-cover rounded-lg border">
+                        <button id="save-records-btn"
+                            class="bg-blue-500 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition-colors flex items-center justify-center text-base flex-1">
+                            <i data-feather="save" class="mr-2 w-4 h-4"></i> Save
+                        </button>
+                        <button id="download-btn"
+                            class="bg-secondary-500 hover:bg-secondary-700 text-white font-medium py-3 px-4 rounded-lg transition-colors flex items-center justify-center text-base flex-1">
+                            <i data-feather="download" class="mr-2 w-4 h-4"></i> Download
+                        </button>
+                    </div>
+                </div>
+
+                <div class="mt-4 bg-white rounded-xl shadow-md p-4">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                        <i data-feather="info" class="mr-2"></i> How It Works
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="p-4 rounded-lg bg-primary-50">
+                            <div
+                                class="w-10 h-10 bg-primary-500 rounded-full flex items-center justify-center text-white mb-3">
+                                <i data-feather="upload"></i>
                             </div>
-                            <div>
-                                <h3 class="text-lg font-semibold mb-3">Details</h3>
-                                <p class="text-sm text-gray-600 mb-2">Date & Time:</p>
-                                <p id="detail-datetime" class="font-medium mb-4"></p>
-                                <p class="text-sm text-gray-600 mb-2">Converted Text:</p>
-                                <div class="bg-gray-50 p-3 rounded border">
-                                    <p id="detail-text" class="font-medium"></p>
+                            <h3 class="font-medium text-gray-800 mb-2">Upload Image</h3>
+                            <p class="text-gray-600 text-sm">Upload a clear image of braille text from your device.</p>
+                        </div>
+                        <div class="p-4 rounded-lg bg-primary-50">
+                            <div
+                                class="w-10 h-10 bg-primary-500 rounded-full flex items-center justify-center text-white mb-3">
+                                <i data-feather="cpu"></i>
+                            </div>
+                            <h3 class="font-medium text-gray-800 mb-2">AI Processing</h3>
+                            <p class="text-gray-600 text-sm">Our system analyzes the braille dots to decode the text.
+                            </p>
+                        </div>
+                        <div class="p-4 rounded-lg bg-primary-50">
+                            <div
+                                class="w-10 h-10 bg-primary-500 rounded-full flex items-center justify-center text-white mb-3">
+                                <i data-feather="file-text"></i>
+                            </div>
+                            <h3 class="font-medium text-gray-800 mb-2">Get Results</h3>
+                            <p class="text-gray-600 text-sm">View, copy or download the converted text instantly.</p>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <!-- History Records Page -->
+                <div id="history-content" class="page-content">
+                    <p>HI</p>
+                    <div class="bg-white rounded-xl shadow-md p-6">
+                        <!-- Records List -->
+                        <div id="records-list">
+                            <h2 class="text-2xl font-semibold text-gray-800 mb-6">History Records</h2>
+                            <div class="mb-6">
+                                <input type="text" id="search-records" placeholder="Search records..."
+                                    class="w-full p-3 border border-gray-300 rounded-lg">
+                            </div>
+
+                            <div class="space-y-4">
+                                <div class="record-item bg-primary-50 rounded-lg p-4 cursor-pointer hover:bg-primary-100"
+                                    data-record-id="1">
+                                    <h3 class="font-medium text-gray-800">Sample Record 1</h3>
+                                    <p class="text-sm text-gray-600">Hello World - Dec 15, 2024</p>
+                                </div>
+                                <div class="record-item bg-primary-50 rounded-lg p-4 cursor-pointer hover:bg-primary-100"
+                                    data-record-id="2">
+                                    <h3 class="font-medium text-gray-800">Sample Record 2</h3>
+                                    <p class="text-sm text-gray-600">Welcome to DAMA - Dec 15, 2024</p>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- How This Model Works Page -->
-            <div id="how-it-works-content" class="page-content">
-                <p>HI</p>
-                <div class="bg-white rounded-xl shadow-md p-6">
-                    <h2 class="text-2xl font-semibold text-gray-800 mb-6 flex items-center">
-                        <i data-feather="cpu" class="mr-3"></i> How Our AI Model Works
-                    </h2>
-                    <div class="space-y-6">
-                        <div class="border-l-4 border-primary-500 pl-6">
-                            <h3 class="text-xl font-semibold text-gray-800 mb-3">Image Processing</h3>
-                            <p class="text-gray-600 mb-4">Our advanced computer vision system analyzes uploaded images to detect braille cells using pattern recognition algorithms.</p>
-                        </div>
-                        <div class="border-l-4 border-secondary-500 pl-6">
-                            <h3 class="text-xl font-semibold text-gray-800 mb-3">AI Recognition</h3>
-                            <p class="text-gray-600 mb-4">Neural networks trained on thousands of braille samples accurately convert dot patterns to text.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- About Page -->
-            <div id="about-content" class="page-content">
-                <p>HI</p>
-                <div class="bg-white rounded-xl shadow-md p-6">
-                    <h2 class="text-2xl font-semibold text-gray-800 mb-6 flex items-center">
-                        <i data-feather="info" class="mr-3"></i> About DAMA
-                    </h2>
-                    <div class="space-y-6">
-                        <div>
-                            <h3 class="text-xl font-semibold text-gray-800 mb-3">Our Mission</h3>
-                            <p class="text-gray-600 mb-4">DAMA is dedicated to making information more accessible through AI-powered solutions that break down barriers for individuals with visual impairments.</p>
-                        </div>
-                        <div class="bg-secondary-50 rounded-lg p-6">
-                            <h4 class="font-semibold text-gray-800 mb-3">Key Features</h4>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div class="flex items-start">
-                                    <i data-feather="zap" class="text-secondary-500 mr-2 mt-1"></i>
-                                    <div>
-                                        <p class="font-medium text-gray-800">Lightning Fast</p>
-                                        <p class="text-sm text-gray-600">Convert images in seconds</p>
+
+                        <!-- Record Detail -->
+                        <div id="record-detail" class="hidden">
+                            <button id="back-to-records"
+                                class="mb-4 text-primary-700 hover:text-primary-900 flex items-center">
+                                <i data-feather="arrow-left" class="mr-2"></i> Back to Records
+                            </button>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-3">Original Image</h3>
+                                    <img id="detail-image" class="w-full h-48 object-cover rounded-lg border">
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-3">Details</h3>
+                                    <p class="text-sm text-gray-600 mb-2">Date & Time:</p>
+                                    <p id="detail-datetime" class="font-medium mb-4"></p>
+                                    <p class="text-sm text-gray-600 mb-2">Converted Text:</p>
+                                    <div class="bg-gray-50 p-3 rounded border">
+                                        <p id="detail-text" class="font-medium"></p>
                                     </div>
                                 </div>
-                                <div class="flex items-start">
-                                    <i data-feather="shield" class="text-secondary-500 mr-2 mt-1"></i>
-                                    <div>
-                                        <p class="font-medium text-gray-800">Privacy First</p>
-                                        <p class="text-sm text-gray-600">Secure processing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- How This Model Works Page -->
+                <div id="how-it-works-content" class="page-content">
+                    <p>HI</p>
+                    <div class="bg-white rounded-xl shadow-md p-6">
+                        <h2 class="text-2xl font-semibold text-gray-800 mb-6 flex items-center">
+                            <i data-feather="cpu" class="mr-3"></i> How Our AI Model Works
+                        </h2>
+                        <div class="space-y-6">
+                            <div class="border-l-4 border-primary-500 pl-6">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-3">Image Processing</h3>
+                                <p class="text-gray-600 mb-4">Our advanced computer vision system analyzes uploaded
+                                    images to detect braille cells using pattern recognition algorithms.</p>
+                            </div>
+                            <div class="border-l-4 border-secondary-500 pl-6">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-3">AI Recognition</h3>
+                                <p class="text-gray-600 mb-4">Neural networks trained on thousands of braille samples
+                                    accurately convert dot patterns to text.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- About Page -->
+                <div id="about-content" class="page-content">
+                    <p>HI</p>
+                    <div class="bg-white rounded-xl shadow-md p-6">
+                        <h2 class="text-2xl font-semibold text-gray-800 mb-6 flex items-center">
+                            <i data-feather="info" class="mr-3"></i> About DAMA
+                        </h2>
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-3">Our Mission</h3>
+                                <p class="text-gray-600 mb-4">DAMA is dedicated to making information more accessible
+                                    through AI-powered solutions that break down barriers for individuals with visual
+                                    impairments.</p>
+                            </div>
+                            <div class="bg-secondary-50 rounded-lg p-6">
+                                <h4 class="font-semibold text-gray-800 mb-3">Key Features</h4>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div class="flex items-start">
+                                        <i data-feather="zap" class="text-secondary-500 mr-2 mt-1"></i>
+                                        <div>
+                                            <p class="font-medium text-gray-800">Lightning Fast</p>
+                                            <p class="text-sm text-gray-600">Convert images in seconds</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i data-feather="shield" class="text-secondary-500 mr-2 mt-1"></i>
+                                        <div>
+                                            <p class="font-medium text-gray-800">Privacy First</p>
+                                            <p class="text-sm text-gray-600">Secure processing</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </main>
 
         <!-- Loading Overlay -->
-        <div id="loading-overlay" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div id="loading-overlay"
+            class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
             <div class="bg-white rounded-xl p-8 text-center">
                 <div class="animate-spin rounded-full h-16 w-16 border-b-2 border-primary-500 mx-auto mb-4"></div>
                 <h3 class="text-lg font-semibold text-gray-800 mb-2">Processing Image</h3>
@@ -369,139 +413,140 @@
 
     <script src="script.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-        // Navigation functionality
-        const navItems = document.querySelectorAll('.nav-item');
-        
-        navItems.forEach(item => {
-            item.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // Remove active class from all items
-                navItems.forEach(nav => {
-                    nav.classList.remove('active', 'bg-primary-100', 'text-primary-700', 'font-medium');
-                    nav.classList.add('text-gray-700');
+        document.addEventListener('DOMContentLoaded', function () {
+            // Navigation functionality
+            const navItems = document.querySelectorAll('.nav-item');
+
+            navItems.forEach(item => {
+                item.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    // Remove active class from all items
+                    navItems.forEach(nav => {
+                        nav.classList.remove('active', 'bg-primary-100', 'text-primary-700', 'font-medium');
+                        nav.classList.add('text-gray-700');
+                    });
+
+                    // Add active class to clicked item
+                    this.classList.add('active', 'bg-primary-100', 'text-primary-700', 'font-medium');
+                    this.classList.remove('text-gray-700');
+
+                    // Page switching logic
+                    const page = this.getAttribute('data-page');
+
+                    // Hide all page contents
+                    document.querySelectorAll('.page-content').forEach(content => {
+                        content.classList.add('hidden');
+                    });
+
+                    // Show selected page content
+                    const targetContent = document.getElementById(page + '-content');
+                    if (targetContent) {
+                        targetContent.classList.remove('hidden');
+                        // Update URL
+                        window.history.pushState({ page: page }, '', '#' + page);
+                    }
+
+                    // Refresh feather icons after page switch
+                    setTimeout(() => {
+                        feather.replace();
+                    }, 100);
                 });
-                
-                // Add active class to clicked item
-                this.classList.add('active', 'bg-primary-100', 'text-primary-700', 'font-medium');
-                this.classList.remove('text-gray-700');
-                
-                // Page switching logic
-                const page = this.getAttribute('data-page');
-                
-                // Hide all page contents
-                document.querySelectorAll('.page-content').forEach(content => {
-                    content.classList.add('hidden');
-                });
-                
-                // Show selected page content
-                const targetContent = document.getElementById(page + '-content');
-                if (targetContent) {
-                    targetContent.classList.remove('hidden');
-                    // Update URL
-                    window.history.pushState({page: page}, '', '#' + page);
-                }
-                
-                // Refresh feather icons after page switch
-                setTimeout(() => {
-                    feather.replace();
-                }, 100);
             });
-        });
-        
-        feather.replace();
-        
-        // Hide all pages first, then show homepage
-        document.querySelectorAll('.page-content').forEach(content => {
-            content.classList.add('hidden');
-        });
-        document.getElementById('homepage-content').classList.remove('hidden');
-        
-        // History Records functionality
-        const recordItems = document.querySelectorAll('.record-item');
-        const recordsList = document.getElementById('records-list');
-        const recordDetail = document.getElementById('record-detail');
-        const backButton = document.getElementById('back-to-records');
-        const searchInput = document.getElementById('search-records');
-        
-        // Sample data for records
-        const recordsData = {
-            1: {
-                image: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDIwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTAwIiByeD0iNCIgZmlsbD0iIzlDQTNBRiIvPgo8dGV4dCB4PSIxMDAiIHk9IjU1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0Ij5TYW1wbGUgSW1hZ2UgMTwvdGV4dD4KPHN2Zz4K',
-                datetime: 'December 15, 2024 - 2:45 PM',
-                text: 'Hello World'
-            },
-            2: {
-                image: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDIwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTAwIiByeD0iNCIgZmlsbD0iIzlDQTNBRiIvPgo8dGV4dCB4PSIxMDAiIHk9IjU1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0Ij5TYW1wbGUgSW1hZ2UgMjwvdGV4dD4KPHN2Zz4K',
-                datetime: 'December 15, 2024 - 1:30 PM',
-                text: 'Welcome to DAMA'
-            }
-        };
-        
-        // Show record detail
-        recordItems.forEach(item => {
-            item.addEventListener('click', function() {
-                const recordId = this.getAttribute('data-record-id');
-                const record = recordsData[recordId];
-                
-                if (record) {
-                    document.getElementById('detail-image').src = record.image;
-                    document.getElementById('detail-datetime').textContent = record.datetime;
-                    document.getElementById('detail-text').textContent = record.text;
-                    
-                    recordsList.classList.add('hidden');
-                    recordDetail.classList.remove('hidden');
-                }
+
+            feather.replace();
+
+            // Hide all pages first, then show homepage
+            document.querySelectorAll('.page-content').forEach(content => {
+                content.classList.add('hidden');
             });
-        });
-        
-        // Back to records list
-        backButton.addEventListener('click', function() {
-            recordDetail.classList.add('hidden');
-            recordsList.classList.remove('hidden');
-        });
-        
-        // Search functionality
-        searchInput.addEventListener('input', function() {
-            const searchTerm = this.value.toLowerCase();
+            document.getElementById('homepage-content').classList.remove('hidden');
+
+            // History Records functionality
+            const recordItems = document.querySelectorAll('.record-item');
+            const recordsList = document.getElementById('records-list');
+            const recordDetail = document.getElementById('record-detail');
+            const backButton = document.getElementById('back-to-records');
+            const searchInput = document.getElementById('search-records');
+
+            // Sample data for records
+            const recordsData = {
+                1: {
+                    image: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDIwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTAwIiByeD0iNCIgZmlsbD0iIzlDQTNBRiIvPgo8dGV4dCB4PSIxMDAiIHk9IjU1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0Ij5TYW1wbGUgSW1hZ2UgMTwvdGV4dD4KPHN2Zz4K',
+                    datetime: 'December 15, 2024 - 2:45 PM',
+                    text: 'Hello World'
+                },
+                2: {
+                    image: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDIwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTAwIiByeD0iNCIgZmlsbD0iIzlDQTNBRiIvPgo8dGV4dCB4PSIxMDAiIHk9IjU1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0Ij5TYW1wbGUgSW1hZ2UgMjwvdGV4dD4KPHN2Zz4K',
+                    datetime: 'December 15, 2024 - 1:30 PM',
+                    text: 'Welcome to DAMA'
+                }
+            };
+
+            // Show record detail
             recordItems.forEach(item => {
-                const text = item.textContent.toLowerCase();
-                if (text.includes(searchTerm)) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
+                item.addEventListener('click', function () {
+                    const recordId = this.getAttribute('data-record-id');
+                    const record = recordsData[recordId];
+
+                    if (record) {
+                        document.getElementById('detail-image').src = record.image;
+                        document.getElementById('detail-datetime').textContent = record.datetime;
+                        document.getElementById('detail-text').textContent = record.text;
+
+                        recordsList.classList.add('hidden');
+                        recordDetail.classList.remove('hidden');
+                    }
+                });
             });
-        });
-        
-        // Language radio button functionality
-        const englishRadio = document.getElementById('english-radio');
-        const filipinoRadio = document.getElementById('filipino-radio');
-        const languageStatus = document.getElementById('language-status');
-        
-        function handleLanguageChange(language) {
-            // Show loading
-            languageStatus.textContent = 'Switching language...';
-            languageStatus.className = 'mt-2 text-sm text-blue-600';
-            languageStatus.classList.remove('hidden');
-            
-            // Simulate loading delay
-            setTimeout(() => {
-                languageStatus.textContent = `Switched to ${language} successfully!`;
-                languageStatus.className = 'mt-2 text-sm text-green-600';
-            }, 500);
-        }
-        
-        englishRadio.addEventListener('change', function() {
-            if (this.checked) handleLanguageChange('English');
-        });
-        
-        filipinoRadio.addEventListener('change', function() {
-            if (this.checked) handleLanguageChange('Filipino');
-        });
+
+            // Back to records list
+            backButton.addEventListener('click', function () {
+                recordDetail.classList.add('hidden');
+                recordsList.classList.remove('hidden');
+            });
+
+            // Search functionality
+            searchInput.addEventListener('input', function () {
+                const searchTerm = this.value.toLowerCase();
+                recordItems.forEach(item => {
+                    const text = item.textContent.toLowerCase();
+                    if (text.includes(searchTerm)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+
+            // Language radio button functionality
+            const englishRadio = document.getElementById('english-radio');
+            const filipinoRadio = document.getElementById('filipino-radio');
+            const languageStatus = document.getElementById('language-status');
+
+            function handleLanguageChange(language) {
+                // Show loading
+                languageStatus.textContent = 'Switching language...';
+                languageStatus.className = 'mt-2 text-sm text-blue-600';
+                languageStatus.classList.remove('hidden');
+
+                // Simulate loading delay
+                setTimeout(() => {
+                    languageStatus.textContent = `Switched to ${language} successfully!`;
+                    languageStatus.className = 'mt-2 text-sm text-green-600';
+                }, 500);
+            }
+
+            englishRadio.addEventListener('change', function () {
+                if (this.checked) handleLanguageChange('English');
+            });
+
+            filipinoRadio.addEventListener('change', function () {
+                if (this.checked) handleLanguageChange('Filipino');
+            });
         });
     </script>
 
 </body>
+
 </html>

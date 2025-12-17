@@ -1,0 +1,85 @@
+# config/data.yaml
+
+path: data/grade1_dataset_updated
+train: train/images
+val: valid/images
+test: test/images
+
+nc: 67
+names:
+  [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "ENYE",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z",
+    "a",
+    "b",
+    "c",
+    "capital",
+    "d",
+    "dot_4",
+    "e",
+    "enye",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "number",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+  ]
+
+roboflow:
+  workspace: thesis-vglk4
+  project: grade1-0t4ax
+  version: 3
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/thesis-vglk4/grade1-0t4ax/dataset/3
