@@ -183,7 +183,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <div class="space-y-4">
       <div class="bg-white rounded-lg p-4 border border-gray-300">
         <h4 class="font-semibold text-gray-800 mb-3">Converted Text:</h4>
-        <div class="text-gray-800 whitespace-pre-wrap leading-relaxed">
+        <div class="text-gray-800 whitespace-pre-line leading-relaxed">
           ${escapeHtml(result.text)}
         </div>
       </div>
