@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History Records - BrailleVision</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            100: '#e0f7d1',
+                            500: '#a8e072',
+                            700: '#7cb342',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-primary-100 min-h-screen">
+    <header class="bg-primary-700 text-white p-4 shadow-lg transition-all duration-300">
+        <div class="flex items-center justify-between">
+            <button id="menu-toggle" class="p-2 hover:bg-primary-600 rounded-lg transition-colors">
+                <i data-feather="menu" class="w-6 h-6"></i>
+            </button>
+            <div class="flex items-center">
+                <img src="dama-logo-removebg-preview.png" alt="DAMA Logo" class="h-24">
+            </div>
+            <div class="w-10"></div>
+        </div>
+    </header>
+
+    <aside id="sidebar" class="fixed top-0 left-0 h-full w-80 bg-white shadow-2xl transform -translate-x-full transition-transform duration-300 z-50">
+        <div class="p-6">
+            <div class="flex items-center justify-between mb-8">
+                <h2 class="text-xl font-semibold text-gray-800">Menu</h2>
+                <button id="sidebar-close" class="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+                    <i data-feather="x" class="w-6 h-6 text-gray-600"></i>
+                </button>
+            </div>
+            <nav class="space-y-2">
+                <a href="index.html" class="flex items-center p-3 rounded-lg hover:bg-primary-100 transition-colors text-gray-700">
+                    <i data-feather="home" class="w-5 h-5 mr-3"></i>
+                    <span>Homepage</span>
+                </a>
+                <a href="history.html" class="flex items-center p-3 rounded-lg bg-primary-100 text-primary-700 font-medium">
+                    <i data-feather="clock" class="w-5 h-5 mr-3"></i>
+                    <span>History Records</span>
+                </a>
+                <a href="how-it-works.html" class="flex items-center p-3 rounded-lg hover:bg-primary-100 transition-colors text-gray-700">
+                    <i data-feather="cpu" class="w-5 h-5 mr-3"></i>
+                    <span>How This Model Works</span>
+                </a>
+                <a href="about.html" class="flex items-center p-3 rounded-lg hover:bg-primary-100 transition-colors text-gray-700">
+                    <i data-feather="info" class="w-5 h-5 mr-3"></i>
+                    <span>About</span>
+                </a>
+            </nav>
+        </div>
+    </aside>
+
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+
+    <main class="p-4">
+        <div class="bg-white rounded-xl shadow-md p-6">
+            <h1 class="text-2xl font-semibold text-gray-800 mb-6">History Records</h1>
+            
+            <div id="records-list" class="space-y-4">
+                <div class="record-item bg-gray-50 rounded-lg p-4 cursor-pointer hover:bg-gray-100 transition-colors border border-gray-200" data-id="1">
+                    <div class="flex items-center gap-4">
+                        <img src="https://via.placeholder.com/80" alt="Record" class="w-20 h-20 object-cover rounded">
+                        <div>
+                            <p class="font-medium text-gray-800">Braille Conversion</p>
+                            <p class="text-sm text-gray-600">December 15, 2024 - 2:45 PM</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="record-item bg-gray-50 rounded-lg p-4 cursor-pointer hover:bg-gray-100 transition-colors border border-gray-200" data-id="2">
+                    <div class="flex items-center gap-4">
+                        <img src="https://via.placeholder.com/80" alt="Record" class="w-20 h-20 object-cover rounded">
+                        <div>
+                            <p class="font-medium text-gray-800">Braille Conversion</p>
+                            <p class="text-sm text-gray-600">December 14, 2024 - 1:30 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="record-detail" class="bg-white rounded-xl shadow-md p-6 mt-6 hidden">
+            <button id="back-btn" class="mb-4 text-primary-700 hover:text-primary-900 flex items-center font-medium">
+                <i data-feather="arrow-left" class="mr-2"></i> Back to Records
+            </button>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                <div>
+                    <h3 class="text-lg font-semibold mb-3 text-gray-800">Original Photo</h3>
+                    <img id="detail-image" class="w-full rounded-lg border border-gray-200" src="https://via.placeholder.com/400">
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-3 text-gray-800">Prediction Photo Preview</h3>
+                    <img id="detail-prediction" class="w-full rounded-lg border border-gray-200" src="https://via.placeholder.com/400">
+                </div>
+            </div>
+            
+            <div class="space-y-4">
+                <div>
+                    <p class="text-sm text-gray-600 mb-1">Date & Time:</p>
+                    <p id="detail-datetime" class="font-medium text-gray-800">December 15, 2024 - 2:45 PM</p>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-600 mb-1">Converted Text:</p>
+                    <div class="bg-gray-50 p-4 rounded border border-gray-200">
+                        <p id="detail-text" class="text-gray-800">Sample converted braille text will appear here.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        feather.replace();
+        const menuToggle = document.getElementById('menu-toggle');
+        const sidebar = document.getElementById('sidebar');
+        const sidebarClose = document.getElementById('sidebar-close');
+        const sidebarOverlay = document.getElementById('sidebar-overlay');
+        const recordsList = document.getElementById('records-list');
+        const recordDetail = document.getElementById('record-detail');
+        const backBtn = document.getElementById('back-btn');
+
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.remove('-translate-x-full');
+            sidebarOverlay.classList.remove('hidden');
+            feather.replace();
+        });
+
+        sidebarClose.addEventListener('click', () => {
+            sidebar.classList.add('-translate-x-full');
+            sidebarOverlay.classList.add('hidden');
+        });
+
+        sidebarOverlay.addEventListener('click', () => {
+            sidebar.classList.add('-translate-x-full');
+            sidebarOverlay.classList.add('hidden');
+        });
+        
+        document.querySelectorAll('.record-item').forEach(item => {
+            item.addEventListener('click', () => {
+                recordsList.parentElement.classList.add('hidden');
+                recordDetail.classList.remove('hidden');
+                feather.replace();
+            });
+        });
+        
+        backBtn.addEventListener('click', () => {
+            recordDetail.classList.add('hidden');
+            recordsList.parentElement.classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>

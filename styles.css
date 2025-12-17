@@ -1,0 +1,51 @@
+/* Base styles */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Drop area highlight */
+#drop-area.highlight {
+    border-color: #7cb342;
+    background-color: #f0f7e6;
+}
+
+/* Animation for conversion */
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+.converting {
+    animation: pulse 1.5s infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    aside {
+        order: -1;
+        width: 100%;
+        border-bottom: 1px solid #e2e8f0;
+        border-left: none;
+    }
+}
