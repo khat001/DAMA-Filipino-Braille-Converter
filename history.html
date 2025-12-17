@@ -78,26 +78,10 @@
             <h1 class="text-2xl font-semibold text-gray-800 mb-6">History Records</h1>
 
             <div id="records-list" class="space-y-4">
-                <div class="record-item bg-gray-50 rounded-lg p-4 cursor-pointer hover:bg-gray-100 transition-colors border border-gray-200"
-                    data-id="1">
-                    <div class="flex items-center gap-4">
-                        <img src="https://via.placeholder.com/80" alt="Record" class="w-20 h-20 object-cover rounded">
-                        <div>
-                            <p class="font-medium text-gray-800">Braille Conversion</p>
-                            <p class="text-sm text-gray-600">December 15, 2024 - 2:45 PM</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="record-item bg-gray-50 rounded-lg p-4 cursor-pointer hover:bg-gray-100 transition-colors border border-gray-200"
-                    data-id="2">
-                    <div class="flex items-center gap-4">
-                        <img src="https://via.placeholder.com/80" alt="Record" class="w-20 h-20 object-cover rounded">
-                        <div>
-                            <p class="font-medium text-gray-800">Braille Conversion</p>
-                            <p class="text-sm text-gray-600">December 14, 2024 - 1:30 PM</p>
-                        </div>
-                    </div>
+                <!-- Loading state -->
+                <div class="text-center py-12">
+                    <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-500 mx-auto mb-4"></div>
+                    <p class="text-gray-600">Loading history...</p>
                 </div>
             </div>
         </div>
@@ -136,6 +120,8 @@
     </main>
 
     <script>
+        const API_BASE_URL = "http://localhost:5000/api";
+
         feather.replace();
         const menuToggle = document.getElementById('menu-toggle');
         const sidebar = document.getElementById('sidebar');
@@ -145,6 +131,7 @@
         const recordDetail = document.getElementById('record-detail');
         const backBtn = document.getElementById('back-btn');
 
+        // Menu functionality
         menuToggle.addEventListener('click', () => {
             sidebar.classList.remove('-translate-x-full');
             sidebarOverlay.classList.remove('hidden');
@@ -161,18 +148,58 @@
             sidebarOverlay.classList.add('hidden');
         });
 
-        document.querySelectorAll('.record-item').forEach(item => {
-            item.addEventListener('click', () => {
-                recordsList.parentElement.classList.add('hidden');
-                recordDetail.classList.remove('hidden');
-                feather.replace();
-            });
-        });
-
         backBtn.addEventListener('click', () => {
             recordDetail.classList.add('hidden');
             recordsList.parentElement.classList.remove('hidden');
         });
+
+        async function loadHistory() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/history`);
+                const data = await response.json();
+
+                if (data.history && data.history.length > 0) {
+                    displayHistory(data.history);
+                } else {
+                    recordsList.innerHTML = '<p class="text-center py-12 text-gray-600">No conversion history yet.</p>';
+                }
+            } catch (error) {
+                recordsList.innerHTML = '<p class="text-center py-12 text-red-600">Failed to load history</p>';
+            }
+        }
+
+        function displayHistory(history) {
+            recordsList.innerHTML = history.map((record, index) => `
+        <div class="record-item bg-gray-50 rounded-lg p-4 cursor-pointer hover:bg-gray-100 transition-colors border border-gray-200" data-index="${index}">
+            <div class="flex items-center gap-4">
+                <img src="http://localhost:5000${record.original_image}" alt="Record" class="w-20 h-20 object-cover rounded" onerror="this.src='https://via.placeholder.com/80?text=No+Image'">
+
+                <div class="flex-1">
+                    <p class="font-medium text-gray-800">Braille Conversion</p>
+                    <p class="text-sm text-gray-600">${record.date}</p>
+                    <p class="text-xs text-gray-500 mt-1 truncate">${record.text}</p>
+                </div>
+            </div>
+        </div>
+    `).join('');
+
+            document.querySelectorAll('.record-item').forEach((item, index) => {
+                item.addEventListener('click', () => showRecordDetail(history[index]));
+            });
+        }
+
+        function showRecordDetail(record) {
+            recordsList.parentElement.classList.add('hidden');
+            recordDetail.classList.remove('hidden');
+
+            document.getElementById('detail-image').src = `http://localhost:5000${record.original_image}`;
+            document.getElementById('detail-prediction').src = `http://localhost:5000${record.prediction_image}`;
+            document.getElementById('detail-datetime').textContent = record.date;
+            document.getElementById('detail-text').textContent = record.full_text;
+        }
+
+        // Load history when page loads
+        loadHistory();
     </script>
 </body>
 

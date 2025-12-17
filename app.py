@@ -19,14 +19,72 @@ import sys
 # Add the project root to Python path to enable imports
 sys.path.insert(0, str(Path(__file__).parent))
 
-# Import your existing modules
-
 app = Flask(__name__)
 CORS(app)  # Enable CORS for frontend communication
 
 # Configuration
-UPLOAD_FOLDER = Path('uploads')
-RESULTS_FOLDER = Path('results')
+LOCAL_FOLDER = Path.home() / '.local' / 'share' / 'braille_app'
+LOCAL_FOLDER.mkdir(parents=True, exist_ok=True)
+
+UPLOAD_FOLDER = LOCAL_FOLDER / 'uploads'
+RESULTS_FOLDER = LOCAL_FOLDER / 'results'
+
+
+@app.route('/api/files/<path:filename>')
+def serve_file(filename):
+    """Serve files from local folders"""
+    try:
+        # Check if file is in uploads or results
+        upload_path = UPLOAD_FOLDER / filename
+        result_path = RESULTS_FOLDER / filename
+
+        if upload_path.exists():
+            return send_file(str(upload_path))
+        elif result_path.exists():
+            return send_file(str(result_path))
+        else:
+            return jsonify({'error': 'File not found'}), 404
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/history', methods=['GET'])
+def get_history():
+    """Get conversion history with file paths"""
+    try:
+        result_files = sorted(
+            RESULTS_FOLDER.glob('output_*.jpg'),
+            key=lambda x: x.stat().st_mtime,
+            reverse=True
+        )[:10]
+
+        history = []
+        for file_path in result_files:
+            timestamp = file_path.stem.replace('output_', '')
+
+            # Find corresponding files
+            input_file = f"input_{timestamp}.jpg"
+            text_file = RESULTS_FOLDER / f"text_{timestamp}.txt"
+
+            text_content = ""
+            if text_file.exists():
+                with open(text_file, 'r', encoding='utf-8') as f:
+                    text_content = f.read()
+
+            history.append({
+                'timestamp': timestamp,
+                'original_image': f"/api/files/{input_file}",
+                'prediction_image': f"/api/files/{file_path.name}",
+                'text': text_content[:100] + '...' if len(text_content) > 100 else text_content,
+                'full_text': text_content,
+                'date': datetime.fromtimestamp(file_path.stat().st_mtime).strftime('%Y-%m-%d %H:%M:%S')
+            })
+
+        return jsonify({'history': history}), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
 UPLOAD_FOLDER.mkdir(exist_ok=True)
 RESULTS_FOLDER.mkdir(exist_ok=True)
 
@@ -85,20 +143,6 @@ def standardize_image_size(image, target_width, target_height, keep_aspect_ratio
 print("🚀 Loading YOLO model...")
 detector = YOLODetector(model_name=MODEL_PATH, device='cpu', verbose=False)
 print("✅ Model loaded successfully!")
-
-# Initialize converter with EXACT default values from predict.py
-# Default values from predict.py (lines 85-120):
-# - line_height_threshold=50
-# - word_gap_threshold=80 (NOT 30!)
-# - char_gap_threshold=30 (NOT 25!)
-# - min_confidence=0.10 (NOT 0.15!)
-# - enable_spellcheck=False (NOT True!)
-# - enable_gap_detection=True
-# - bilingual=True (from braille_converter.py default)
-# - enable_llm_correction=True (from predict.py line 111)
-# - llm_api='groq'
-# - llm_api_key=GROQ_API
-# - target_language='en'
 
 converter = RobustBrailleConverter(
     line_height_threshold=50,
@@ -291,41 +335,6 @@ def download_file(filename):
             as_attachment=True,
             download_name=filename
         )
-    except Exception as e:
-        return jsonify({'error': str(e)}), 500
-
-
-@app.route('/api/history', methods=['GET'])
-def get_history():
-    """Get conversion history (last 10 conversions)"""
-    try:
-        # Get all result files
-        result_files = sorted(
-            RESULTS_FOLDER.glob('output_*.jpg'),
-            key=lambda x: x.stat().st_mtime,
-            reverse=True
-        )[:10]
-
-        history = []
-        for file_path in result_files:
-            timestamp = file_path.stem.replace('output_', '')
-
-            # Try to find corresponding text file
-            text_file = RESULTS_FOLDER / f"text_{timestamp}.txt"
-            text_content = ""
-            if text_file.exists():
-                with open(text_file, 'r', encoding='utf-8') as f:
-                    text_content = f.read()
-
-            history.append({
-                'timestamp': timestamp,
-                'image_path': str(file_path.name),
-                'text': text_content[:100] + '...' if len(text_content) > 100 else text_content,
-                'date': datetime.fromtimestamp(file_path.stat().st_mtime).strftime('%Y-%m-%d %H:%M:%S')
-            })
-
-        return jsonify({'history': history}), 200
-
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
