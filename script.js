@@ -16,19 +16,19 @@ document.addEventListener("DOMContentLoaded", function () {
   const loadingOverlay = document.getElementById("loading-overlay");
 
   let currentFile = null;
-  let currentLanguage = "english";
+  let currentLanguage = "en";
 
   // Language selection
   document
     .getElementById("english-radio")
     .addEventListener("change", function () {
-      if (this.checked) currentLanguage = "english";
+      if (this.checked) currentLanguage = "en";
     });
 
   document
     .getElementById("filipino-radio")
     .addEventListener("change", function () {
-      if (this.checked) currentLanguage = "filipino";
+      if (this.checked) currentLanguage = "tl";
     });
 
   // Check API health on load
