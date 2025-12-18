@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - BrailleVision</title>
+    <link rel="icon" href="{{url_for('static', filename='img/dama-logo.ico')}}" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <script>
@@ -31,7 +32,8 @@
                 <i data-feather="menu" class="w-6 h-6"></i>
             </button>
             <div class="flex items-center">
-                <img src="dama-logo-removebg-preview.png" alt="DAMA Logo" class="h-24">
+                <img src="{{url_for('static', filename='img/dama-logo-removebg-preview.png')}}" alt="DAMA Logo"
+                    class="h-24">
             </div>
             <div class="w-10"></div>
         </div>
@@ -47,22 +49,22 @@
                 </button>
             </div>
             <nav class="space-y-2">
-                <a href="index.html"
+                <a href="{{url_for('index')}}"
                     class="flex items-center p-3 rounded-lg hover:bg-primary-100 transition-colors text-gray-700">
                     <i data-feather="home" class="w-5 h-5 mr-3"></i>
                     <span>Homepage</span>
                 </a>
-                <a href="history.html"
+                <a href="{{url_for('history')}}"
                     class="flex items-center p-3 rounded-lg hover:bg-primary-100 transition-colors text-gray-700">
                     <i data-feather="clock" class="w-5 h-5 mr-3"></i>
                     <span>History Records</span>
                 </a>
-                <a href="how-it-works.html"
+                <a href="{{url_for('how_it_works')}}"
                     class="flex items-center p-3 rounded-lg hover:bg-primary-100 transition-colors text-gray-700">
                     <i data-feather="cpu" class="w-5 h-5 mr-3"></i>
                     <span>How This Model Works</span>
                 </a>
-                <a href="about.html"
+                <a href="{{url_for('about')}}"
                     class="flex items-center p-3 rounded-lg bg-primary-100 text-primary-700 font-medium">
                     <i data-feather="info" class="w-5 h-5 mr-3"></i>
                     <span>About</span>

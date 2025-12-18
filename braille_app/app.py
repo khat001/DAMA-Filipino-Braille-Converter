@@ -4,7 +4,7 @@ Properly integrated with existing YOLO detector and braille converter scripts
 """
 from models.yolo_detector import YOLODetector
 from scripts.braille_converter import RobustBrailleConverter
-from flask import Flask, request, jsonify, send_file
+from flask import Flask, request, jsonify, send_file, render_template
 from flask_cors import CORS
 from pathlib import Path
 import base64
@@ -14,11 +14,9 @@ import cv2
 import numpy as np
 from datetime import datetime
 import os
-import sys
 
-# Add the project root to Python path to enable imports
-sys.path.insert(0, str(Path(__file__).parent))
 
+# Initialize Flask app with proper static and template folder configuration
 app = Flask(__name__)
 CORS(app)  # Enable CORS for frontend communication
 
@@ -28,62 +26,6 @@ LOCAL_FOLDER.mkdir(parents=True, exist_ok=True)
 
 UPLOAD_FOLDER = LOCAL_FOLDER / 'uploads'
 RESULTS_FOLDER = LOCAL_FOLDER / 'results'
-
-
-@app.route('/api/files/<path:filename>')
-def serve_file(filename):
-    """Serve files from local folders"""
-    try:
-        # Check if file is in uploads or results
-        upload_path = UPLOAD_FOLDER / filename
-        result_path = RESULTS_FOLDER / filename
-
-        if upload_path.exists():
-            return send_file(str(upload_path))
-        elif result_path.exists():
-            return send_file(str(result_path))
-        else:
-            return jsonify({'error': 'File not found'}), 404
-    except Exception as e:
-        return jsonify({'error': str(e)}), 500
-
-
-@app.route('/api/history', methods=['GET'])
-def get_history():
-    """Get conversion history with file paths"""
-    try:
-        result_files = sorted(
-            RESULTS_FOLDER.glob('output_*.jpg'),
-            key=lambda x: x.stat().st_mtime,
-            reverse=True
-        )[:10]
-
-        history = []
-        for file_path in result_files:
-            timestamp = file_path.stem.replace('output_', '')
-
-            # Find corresponding files
-            input_file = f"input_{timestamp}.jpg"
-            text_file = RESULTS_FOLDER / f"text_{timestamp}.txt"
-
-            text_content = ""
-            if text_file.exists():
-                with open(text_file, 'r', encoding='utf-8') as f:
-                    text_content = f.read()
-
-            history.append({
-                'timestamp': timestamp,
-                'original_image': f"/api/files/{input_file}",
-                'prediction_image': f"/api/files/{file_path.name}",
-                'text': text_content[:100] + '...' if len(text_content) > 100 else text_content,
-                'full_text': text_content,
-                'date': datetime.fromtimestamp(file_path.stat().st_mtime).strftime('%Y-%m-%d %H:%M:%S')
-            })
-
-        return jsonify({'history': history}), 200
-    except Exception as e:
-        return jsonify({'error': str(e)}), 500
-
 
 UPLOAD_FOLDER.mkdir(exist_ok=True)
 RESULTS_FOLDER.mkdir(exist_ok=True)
@@ -158,6 +100,89 @@ converter = RobustBrailleConverter(
     target_language='en'
 )
 print("✅ Converter initialized with default values!")
+
+
+# ========== TEMPLATE ROUTES ==========
+
+@app.route('/')
+def index():
+    """Serve the main homepage"""
+    return render_template('index.html')
+
+
+@app.route('/history')
+def history():
+    """Serve the history page"""
+    return render_template('history.html')
+
+
+@app.route('/how-it-works')
+def how_it_works():
+    """Serve the how it works page"""
+    return render_template('how-it-works.html')
+
+
+@app.route('/about')
+def about():
+    """Serve the about page"""
+    return render_template('about.html')
+
+
+# ========== API ROUTES ==========
+
+@app.route('/api/files/<path:filename>')
+def serve_file(filename):
+    """Serve files from local folders"""
+    try:
+        # Check if file is in uploads or results
+        upload_path = UPLOAD_FOLDER / filename
+        result_path = RESULTS_FOLDER / filename
+
+        if upload_path.exists():
+            return send_file(str(upload_path))
+        elif result_path.exists():
+            return send_file(str(result_path))
+        else:
+            return jsonify({'error': 'File not found'}), 404
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/history', methods=['GET'])
+def get_history():
+    """Get conversion history with file paths"""
+    try:
+        result_files = sorted(
+            RESULTS_FOLDER.glob('output_*.jpg'),
+            key=lambda x: x.stat().st_mtime,
+            reverse=True
+        )[:10]
+
+        history = []
+        for file_path in result_files:
+            timestamp = file_path.stem.replace('output_', '')
+
+            # Find corresponding files
+            input_file = f"input_{timestamp}.jpg"
+            text_file = RESULTS_FOLDER / f"text_{timestamp}.txt"
+
+            text_content = ""
+            if text_file.exists():
+                with open(text_file, 'r', encoding='utf-8') as f:
+                    text_content = f.read()
+
+            history.append({
+                'timestamp': timestamp,
+                'original_image': f"/api/files/{input_file}",
+                'prediction_image': f"/api/files/{file_path.name}",
+                'text': text_content[:100] + '...' if len(text_content) > 100 else text_content,
+                'full_text': text_content,
+                'date': datetime.fromtimestamp(file_path.stat().st_mtime).strftime('%Y-%m-%d %H:%M:%S')
+            })
+
+        return jsonify({'history': history}), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
 
 
 @app.route('/api/health', methods=['GET'])
@@ -408,7 +433,8 @@ if __name__ == '__main__':
     print("\n" + "="*60)
     print("🚀 BRAILLE DETECTION API SERVER")
     print("="*60)
-    print(f"📍 API running at: http://localhost:5000")
+    print(f"📍 Web Interface: http://localhost:5000")
+    print(f"📍 API Endpoint: http://localhost:5000/api")
     print(f"🏥 Health check: http://localhost:5000/api/health")
     print(f"⚙️  Configuration: http://localhost:5000/api/config")
     print(
