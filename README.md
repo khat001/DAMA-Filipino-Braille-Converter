@@ -15,8 +15,19 @@
 </div>
 
 <details>
- <summary> Table of Contents</summary>
-    
+    <summary> Table of Contents</summary>
+        <ol>
+            <li> <a href="#about-dama"> About DAMA </a> </li>
+            <li> <a href="#getting-started"> Getting Started </a> 
+                <ul> 
+                    <li> <a href="#installation"> Installation </a> 
+                </ul>
+            </li>
+            <li> <a href="#usage"> Usage </a> </li>
+            <li> <a href="#screenshots"> Screenshots </a> </li>
+            <li> <a href="#license"> License </a> </li>
+            <li> <a href="#developers"> Developers </a> </li>
+        </ol>
 </details>
 
 ## About DAMA
