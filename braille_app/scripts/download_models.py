@@ -17,7 +17,7 @@ def main():
                         help="Hugging Face repo ID, e.g., /")
     parser.add_argument("--subdir", type=str, default="braille_detection_yolov11s/weights",
                         help="Subdirectory inside repo (e.g., 'outputs/models/nail_v2_test2')")
-    parser.add_argument("--local-dir", type=str, default="braille_app/models/",
+    parser.add_argument("--local-dir", type=str, default="models/",
                         help="Where to store the downloaded files")
     args = parser.parse_args()
 
