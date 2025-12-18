@@ -20,7 +20,7 @@
             <li> <a href="#about-dama"> About DAMA </a> </li>
             <li> <a href="#getting-started"> Getting Started </a> 
                 <ul> 
-                    <li> <a href="#installation"> Installation </a> 
+                    <li> <a href="#installation-and-setup"> Installation and Setup </a> 
                 </ul>
             </li>
             <li> <a href="#usage"> Usage </a> </li>
@@ -42,7 +42,12 @@ A Optical Character Recognition (OCR) project that detects Filipino/English Grad
 
 This is an example of how you may give instructions on setting up your project locally. To get a local copy up and running follow these simple example steps.
 
-### Installation
+### Prerequisities
+
+- Python 3.11 or higher
+- [Groq API Key](https://console.groq.com/keys)
+
+### Installation and Setup
 
 1. Clone the repository
 
@@ -65,8 +70,14 @@ This is an example of how you may give instructions on setting up your project l
    ```
 
 4. Install requirements
+
    ```bash
    pip install -r requirement.txt
+   ```
+
+5. Create a .env file and insert your GROQ API
+   ```
+   GROQ_API = "gsk_1234567"
    ```
 
 ## Usage
