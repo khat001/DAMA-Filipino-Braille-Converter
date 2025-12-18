@@ -8,7 +8,6 @@ Usage:
 from huggingface_hub import snapshot_download
 import argparse
 from pathlib import Path
-from pathlib import path
 
 
 def main():
