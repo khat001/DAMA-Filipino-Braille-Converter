@@ -36,7 +36,7 @@
     <img src="img/dama-banner.png" alt="Dama banner"/>
 </div>
 
-A Optical Character Recognition (OCR) project that detects Filipino/English Grade 1 Braille characters using YOLO and converts them into text with the help of LLMs.
+An Optical Character Recognition (OCR) project that detects Filipino/English Grade 1 Braille characters using YOLO and converts them into text with the help of LLMs.
 
 ## Getting Started
 
@@ -93,7 +93,7 @@ This section shows how to use the actual app.
 2. Download the required models
 
    ```bash
-   python -m scripts.download_models
+   python -m scripts.download_model
    ```
 
 3. Run the app and click the `http` server
